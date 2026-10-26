@@ -137,7 +137,7 @@ export default function Admin() {
         makeBlank={(list) => ({
           slug: uniqueSlug("new-member", list.map((x) => x.slug)),
           name: "New member",
-          rank: "Rookie",
+          rank: "Young",
           since: "New",
           online: false,
           alias: "",

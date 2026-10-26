@@ -30,7 +30,7 @@ export const story = [
   },
 ];
 
-export const ranks = ["OG", "Shotcaller", "Veteran", "Soldier", "Rookie"];
+export const ranks = ["OG", "Big Homie", "Shootcaller", "Homie", "Young"];
 export const statusLabel = { held: "Held by PF13", contested: "Contested", neutral: "Neutral" };
 export const postTags = { warn: "Warning", rumor: "Rumor", event: "Event" };
 
