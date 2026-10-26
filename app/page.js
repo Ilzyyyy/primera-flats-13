@@ -18,16 +18,18 @@ export default function StoryPage() {
       </div>
 
       <h2 className="h2">Story</h2>
-      <div className="story">
-        <div className="story-text">
-          {story.map((t, i) => (
-            <p key={i}>{t}</p>
-          ))}
+      {story.map((sec, i) => (
+        <div key={i} className={"story" + (i % 2 ? " flip" : "")}>
+          <div className="story-text">
+            {sec.text.map((t, j) => (
+              <p key={j}>{t}</p>
+            ))}
+          </div>
+          <figure className="photo story-ph" data-hot>
+            <Image src={sec.image} alt={sec.alt} width={sec.w} height={sec.h} />
+          </figure>
         </div>
-        <figure className="photo story-ph" data-hot>
-          <Image src="/story.png" alt="Primera Flats screenshots collage" width={800} height={600} />
-        </figure>
-      </div>
+      ))}
     </section>
   );
 }
