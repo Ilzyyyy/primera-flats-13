@@ -13,15 +13,20 @@ export default function StoryPage() {
           Flats <span>13</span>
         </h1>
         <figure className="photo" data-hot>
-          <Image src="/story.png" alt="Primera Flats screenshots collage" width={800} height={600} priority />
+          <Image src="/wall.jpg" alt="Primera Flats wall with painted lettering" width={712} height={532} priority />
         </figure>
       </div>
 
       <h2 className="h2">Story</h2>
       <div className="story">
-        {story.map((t, i) => (
-          <p key={i}>{t}</p>
-        ))}
+        <div className="story-text">
+          {story.map((t, i) => (
+            <p key={i}>{t}</p>
+          ))}
+        </div>
+        <figure className="photo story-ph" data-hot>
+          <Image src="/story.png" alt="Primera Flats screenshots collage" width={800} height={600} />
+        </figure>
       </div>
     </section>
   );

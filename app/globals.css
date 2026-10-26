@@ -209,4 +209,7 @@ details ul{margin:0;padding-left:20px;display:grid;gap:6px}
 
 .aka{font:.85rem var(--f-type);color:var(--brick);margin-top:-4px}
 .aka.big{font-size:1.1rem;margin:0}
-.story p{margin:0 0 20px;max-width:64ch;line-height:1.6}
+.story{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:start}
+.story-text p{margin:0 0 20px;max-width:64ch;line-height:1.6}
+.story-ph{transform:rotate(-1.5deg)}
+@media (max-width:760px){.story{grid-template-columns:1fr}}
