@@ -14,7 +14,7 @@ Open http://localhost:3000. The admin page is at `/admin`. Locally the default p
 ## What the admin can edit
 
 - Word on the Street: posts, optionally tied to a member and a territory
-- Members: name, rank, plate, photo, bio, character development
+- Members: full name, alias (e.g. Julian Gisbert aka Snichy#3), rank, photo, bio, character development
 - Territory: name, status, photo, description, map position
 
 Member and territory pages show their own photo and every street post tied to them.

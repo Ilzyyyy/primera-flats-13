@@ -140,7 +140,7 @@ export default function Admin() {
           rank: "Rookie",
           since: "New",
           online: false,
-          plate: "",
+          alias: "",
           photo: "",
           bio: "",
           development: "",
@@ -148,9 +148,9 @@ export default function Admin() {
         itemTitle={(m) => m.name || "New member"}
         itemSub={(m) => m.rank}
         fields={[
-          { key: "name", label: "Name", half: true },
+          { key: "name", label: "Full name", half: true },
+          { key: "alias", label: "Alias (aka), e.g. Snichy#3", half: true },
           { key: "rank", label: "Rank", type: "select", options: opts(ranks), half: true },
-          { key: "plate", label: "Plate", half: true },
           { key: "since", label: "Since", half: true },
           { key: "online", label: "Online", type: "checkbox" },
           { key: "photo", label: "Photo", type: "image" },
