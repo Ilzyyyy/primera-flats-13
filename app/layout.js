@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <head>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Barlow:wght@400;500;600&family=Special+Elite&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Special+Elite&display=swap"
         />
       </head>
       <body>

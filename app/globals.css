@@ -1,7 +1,8 @@
+@font-face{font-family:'Rajdhani';src:url('/fonts/Rajdhani-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 :root{
   --bg:#ece8dc; --surface:#e2ddcd; --fg:#15171c; --dim:#5d5f66; --line:#c9c3b0;
   --blue:#1f45b8; --blue-ink:#ffffff; --brick:#a83a24; --ok:#2f7a4a;
-  --f-display:'Saira Stencil One',Impact,sans-serif;
+  --f-display:'Rajdhani',Impact,sans-serif;
   --f-body:'Barlow',system-ui,sans-serif;
   --f-type:'Special Elite','Courier New',monospace;
   color-scheme:light;
