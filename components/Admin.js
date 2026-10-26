@@ -149,7 +149,7 @@ export default function Admin() {
         itemSub={(m) => m.rank}
         fields={[
           { key: "name", label: "Full name", half: true },
-          { key: "alias", label: "Alias (aka), e.g. Snichy#3", half: true },
+          { key: "alias", label: "Plate name under it, e.g. Snichy#3", half: true },
           { key: "rank", label: "Rank", type: "select", options: opts(ranks), half: true },
           { key: "since", label: "Since", half: true },
           { key: "online", label: "Online", type: "checkbox" },

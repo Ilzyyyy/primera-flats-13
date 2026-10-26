@@ -24,7 +24,7 @@ export default function Roster({ members }) {
               <div className="tag">{m.name}</div>
               <span className="rk">{m.rank}</span>
             </div>
-            {m.alias && <div className="aka">aka {m.alias}</div>}
+            {m.alias && <div className="aka">{m.alias}</div>}
             <p>{m.bio}</p>
             <div className="meta">
               <span>Since: {m.since}</span>

@@ -27,7 +27,7 @@ export default function MemberPage({ params }) {
         <div className="profile-info">
           <span className="rk">{m.rank}</span>
           <h2 className="h2">{m.name}</h2>
-          {m.alias && <div className="aka big">aka {m.alias}</div>}
+          {m.alias && <div className="aka big">{m.alias}</div>}
           <dl className="facts">
             <div><dt>Since</dt><dd>{m.since}</dd></div>
             <div><dt>Status</dt><dd><i className={"dot" + (m.online ? " on" : "")} />{m.online ? "online" : "offline"}</dd></div>
