@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "slug": "new-member",
+    "name": "Rafael Guzman",
+    "rank": "OG",
+    "since": "Old.",
+    "online": true,
+    "alias": "Mafya",
+    "photo": "",
+    "bio": "",
+    "development": ""
+  }
+]
