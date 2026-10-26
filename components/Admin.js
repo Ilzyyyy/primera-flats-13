@@ -84,7 +84,7 @@ export default function Admin() {
     setDirty((d) => ({ ...d, [name]: false }));
     setStatus((s) => ({
       ...s,
-      [name]: { msg: j.storage === "github" ? "Saved to GitHub. The site updates after the redeploy, about a minute." : "Saved." },
+      [name]: { msg: "Saved." },
     }));
   }
 
@@ -232,7 +232,7 @@ export default function Admin() {
         </button>
       </div>
       {me.storage === "none" && (
-        <p className="err">Saving is off on this server. Set PF_GITHUB_TOKEN in the host environment variables.</p>
+        <p className="err">Saving is off on this server. Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in the host environment variables.</p>
       )}
       {editors[tab]}
     </>

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { isAdmin } from "../../../lib/auth";
-import { writeBuffer } from "../../../lib/store";
+import { writePhoto } from "../../../lib/store";
 import { slugify } from "../../../lib/slug";
 
 export const dynamic = "force-dynamic";
@@ -14,8 +14,8 @@ export async function POST(req) {
   if (buf.length > 1_500_000) return NextResponse.json({ error: "Image too large." }, { status: 413 });
   const file = `${slugify(name) || "photo"}-${Date.now().toString(36)}.jpg`;
   try {
-    await writeBuffer(`public/uploads/${file}`, buf, `Upload ${file}`);
-    return NextResponse.json({ ok: true, path: `/uploads/${file}` });
+    const photoPath = await writePhoto(file, buf);
+    return NextResponse.json({ ok: true, path: photoPath });
   } catch (e) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }

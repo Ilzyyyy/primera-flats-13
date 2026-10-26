@@ -5,19 +5,18 @@ import PostCard from "../../../components/PostCard";
 import { statusLabel } from "../../../data/content";
 import { getLot, getMembers, getStreet, getTerritory } from "../../../lib/data";
 
-export function generateStaticParams() {
-  return getTerritory().map((t) => ({ slug: t.slug }));
-}
+export const dynamic = "force-dynamic";
 
-export function generateMetadata({ params }) {
-  const t = getLot(params.slug);
+export async function generateMetadata({ params }) {
+  const t = await getLot(params.slug);
   return { title: t ? `${t.name} | Primera Flats 13` : "Territory" };
 }
 
-export default function LotPage({ params }) {
-  const t = getLot(params.slug);
+export default async function LotPage({ params }) {
+  const t = await getLot(params.slug);
   if (!t) notFound();
-  const posts = getStreet().filter((p) => p.territory === t.slug);
+  const [street, members, territory] = await Promise.all([getStreet(), getMembers(), getTerritory()]);
+  const posts = street.filter((p) => p.territory === t.slug);
 
   return (
     <section className="page">
@@ -35,7 +34,7 @@ export default function LotPage({ params }) {
       <h3 className="h3">Word on the street</h3>
       <div className="feed">
         {posts.map((p) => (
-          <PostCard key={p.id} post={p} members={getMembers()} territory={getTerritory()} hide="territory" />
+          <PostCard key={p.id} post={p} members={members} territory={territory} hide="territory" />
         ))}
         {posts.length === 0 && <p className="empty">Nothing about {t.name} yet.</p>}
       </div>

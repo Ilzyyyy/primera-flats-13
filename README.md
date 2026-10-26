@@ -22,17 +22,16 @@ Guides live in `data/content.js` and show up only for a logged-in admin.
 
 ## Deploy (Vercel or Netlify)
 
-The host disk is read-only, so the admin saves by committing the JSON files and photos to this GitHub repo. The host then redeploys by itself (about a minute).
+The host disk is read-only, so the admin saves into Supabase instead of committing to GitHub. Saving never triggers a redeploy, so it does not use up the host's build limit. Redeploys only happen when you push code.
 
-1. Create a fine-grained GitHub token for this repo only, with **Contents: Read and write**.
+1. In Supabase, run `supabase/setup.sql` (creates the `pf_data` table and the public `pf-uploads` bucket, and seeds the current data).
 2. Import the repo on Vercel or Netlify and set these environment variables:
 
 | Name | Value |
 | --- | --- |
 | `ADMIN_PASSWORD` | your admin password |
 | `ADMIN_SECRET` | any long random string (optional) |
-| `PF_GITHUB_TOKEN` | the token from step 1 |
-| `PF_GITHUB_REPO` | `Ilzyyyy/primera-flats-13` |
-| `PF_GITHUB_BRANCH` | `main` |
+| `SUPABASE_URL` | Project URL, e.g. `https://xxxx.supabase.co` |
+| `SUPABASE_SERVICE_ROLE_KEY` | the `service_role` key (server only) |
 
-Without `PF_GITHUB_TOKEN` the live site is read-only and the admin shows a warning.
+Without the Supabase variables the live site is read-only (it shows the data bundled in `data/*.json`) and the admin shows a warning. Locally, without them, saves go straight to `data/*.json` and `public/uploads/`.

@@ -3,11 +3,14 @@ import { getTerritory } from "../../lib/data";
 
 export const metadata = { title: "Territory | Primera Flats 13" };
 
-export default function TerritoryPage() {
+export const dynamic = "force-dynamic";
+
+export default async function TerritoryPage() {
+  const lots = await getTerritory();
   return (
     <section className="page">
       <h2 className="h2">Territory</h2>
-      <TerritoryMap lots={getTerritory()} />
+      <TerritoryMap lots={lots} />
     </section>
   );
 }

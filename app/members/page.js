@@ -3,11 +3,14 @@ import { getMembers } from "../../lib/data";
 
 export const metadata = { title: "Members | Primera Flats 13" };
 
-export default function MembersPage() {
+export const dynamic = "force-dynamic";
+
+export default async function MembersPage() {
+  const members = await getMembers();
   return (
     <section className="page">
       <h2 className="h2">Members</h2>
-      <Roster members={getMembers()} />
+      <Roster members={members} />
     </section>
   );
 }

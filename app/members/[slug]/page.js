@@ -4,19 +4,18 @@ import Photo from "../../../components/Photo";
 import PostCard from "../../../components/PostCard";
 import { getMember, getMembers, getStreet, getTerritory } from "../../../lib/data";
 
-export function generateStaticParams() {
-  return getMembers().map((m) => ({ slug: m.slug }));
-}
+export const dynamic = "force-dynamic";
 
-export function generateMetadata({ params }) {
-  const m = getMember(params.slug);
+export async function generateMetadata({ params }) {
+  const m = await getMember(params.slug);
   return { title: m ? `${m.name} | Primera Flats 13` : "Member" };
 }
 
-export default function MemberPage({ params }) {
-  const m = getMember(params.slug);
+export default async function MemberPage({ params }) {
+  const m = await getMember(params.slug);
   if (!m) notFound();
-  const posts = getStreet().filter((p) => p.member === m.slug);
+  const [street, members, territory] = await Promise.all([getStreet(), getMembers(), getTerritory()]);
+  const posts = street.filter((p) => p.member === m.slug);
   const paragraphs = (m.development || "").split(/\n\s*\n/).filter(Boolean);
 
   return (
@@ -44,7 +43,7 @@ export default function MemberPage({ params }) {
       <h3 className="h3">Word on the street</h3>
       <div className="feed">
         {posts.map((p) => (
-          <PostCard key={p.id} post={p} members={getMembers()} territory={getTerritory()} hide="member" />
+          <PostCard key={p.id} post={p} members={members} territory={territory} hide="member" />
         ))}
         {posts.length === 0 && <p className="empty">Nothing about {m.name} yet.</p>}
       </div>
