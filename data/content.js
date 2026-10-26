@@ -1,24 +1,7 @@
-export const timeline = [
-  {
-    year: "Year 1",
-    title: "The back stairs",
-    text: "A few people from the same block started meeting every night on the back stairs of the building. No name, no colors yet. Just watching each other's back.",
-  },
-  {
-    year: "Year 1",
-    title: "Primera Flats",
-    text: "The first building we held gave us the name. Primera for the first, Flats for home. The 13 came later.",
-  },
-  {
-    year: "Year 2",
-    title: "Holding the block",
-    text: "The block was hit twice and we held both times. That is where the first rule came from: nobody gets left alone.",
-  },
-  {
-    year: "Now",
-    title: "Still standing",
-    text: "More members, more ground, same core. Respect comes first.",
-  },
+export const story = [
+  "The 1st Street Primera Flats formed an alliance with the 4th Street Flats. This alliance was broken when a member of the 4th Street Flats, shot and killed a member of the Primera Flats, in 2005. Early rivals were other gangs that coincided in the Aliso Village projects such as the Cuatro Flats, The Mob Crew, Al Capone, and 1st Street East Coast Crips (the only black gang in Boyle Heights). Other rivals of the Primera Flats are the Clarence Street Locos (CSL), Breed Street, and East LA 13 (ELA13).",
+  "The 23rd Street Flats are rivals of the Street Saints, 22nd Street Gang and the Ghetto Boyz Gang. Other rivals include the 38th Street, Varrio Locos Park, and the Harpys Gang. The Primera Flats and the Ghetto Boyz battled for control of the Trinity Park (especially during the 1980s and 1990s), due to lucrative profits from drug sells.",
+  "This turf rivalry wrecked havoc on South Central\u2019s city streets, which included the shooting death of an eight-year-old boy, who died from a stray bullet at the Trinity Park in 2002. These incidents resulted in the Ghetto Boyz Gang denouncing the recreation center to avoid problems with the Mexican-Mafia.",
 ];
 
 export const ranks = ["OG", "Shotcaller", "Veteran", "Soldier", "Rookie"];

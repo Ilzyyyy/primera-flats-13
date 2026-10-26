@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { timeline } from "../data/content";
+import { story } from "../data/content";
 
 export const metadata = { title: "Story | Primera Flats 13" };
 
@@ -13,20 +13,16 @@ export default function StoryPage() {
           Flats <span>13</span>
         </h1>
         <figure className="photo" data-hot>
-          <Image src="/wall.jpg" alt="Primera Flats wall with painted lettering" width={712} height={532} priority />
+          <Image src="/story.png" alt="Primera Flats screenshots collage" width={800} height={600} priority />
         </figure>
       </div>
 
       <h2 className="h2">Story</h2>
-      <ol className="timeline">
-        {timeline.map((t) => (
-          <li key={t.title}>
-            <div className="yr">{t.year}</div>
-            <h3>{t.title}</h3>
-            <p>{t.text}</p>
-          </li>
+      <div className="story">
+        {story.map((t, i) => (
+          <p key={i}>{t}</p>
         ))}
-      </ol>
+      </div>
     </section>
   );
 }
