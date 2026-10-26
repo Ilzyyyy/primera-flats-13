@@ -30,6 +30,11 @@ export default function StoryPage() {
           </figure>
         </div>
       ))}
+
+      <div className="claim">
+        <h2 className="h2">CLAIM TEAMS</h2>
+        <Image src="/claim-teams.png" alt="Claim teams" width={651} height={124} />
+      </div>
     </section>
   );
 }

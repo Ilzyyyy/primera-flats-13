@@ -217,3 +217,5 @@ details ul{margin:0;padding-left:20px;display:grid;gap:6px}
 .story.flip .story-ph{order:-1;transform:rotate(1.5deg)}
 .story .story-ph:hover{transform:rotate(0) scale(1.02)}
 @media (max-width:760px){.story,.story.flip{grid-template-columns:1fr}.story.flip .story-ph{order:0}}
+.claim{text-align:center;margin-top:24px}
+.claim img{display:block;margin:0 auto;max-width:100%;height:auto}
