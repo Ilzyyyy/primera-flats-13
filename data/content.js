@@ -19,6 +19,15 @@ export const story = [
       "As the years went on the Primera Flats were in a new phase, being run by a younger generation who weren\u2019t particularly interested in maintaining the old peace agreements. With the streets of Boyle Heights still split down the middle by years of bloodshed, two of the original members emerged as very feared figures in the gang Rafael Guzman (Mafya) and Johnny Ramirez (Jokers). Both men became wanted fugitives and left behind a reputation for violence. Under their influence the old rivalries never really went away. The tensions with the other gangs continued to mount and the broken alliances, the old grudges, kept the streets split. Mafya and the Jokers were a generation that wouldn\u2019t back down and they took the gang on into a more brutal era where you just didn\u2019t get respect and you didn\u2019t get away with betrayal.",
     ],
   },
+  {
+    image: "/story-3.png",
+    alt: "Primera Flats lettering on a wall in the neighborhood",
+    w: 1303,
+    h: 814,
+    text: [
+      "The gang expanded their criminal operations behind the scenes via the underground weapons trade, drug dealing and a raft of other illicit businesses which brought them money and influence. They were a well known name which attracted both their own people and a host of dangerous enemies. Even with the police closing in, their names were still associated with the ongoing battles in Primera Flats. For the kids in the new generation the streets were more than just a place to live, they were a legacy of grudges that just wouldn\u2019t die.",
+    ],
+  },
 ];
 
 export const ranks = ["OG", "Shotcaller", "Veteran", "Soldier", "Rookie"];
