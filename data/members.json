@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "flaco",
+    "name": "Flaco",
+    "rank": "OG",
+    "since": "Year 1",
+    "online": true,
+    "plate": "PF 1301",
+    "photo": "",
+    "bio": "Founded the block. Rarely talks, everyone listens.",
+    "development": "Grew up on the block and started the back stairs meetings.\n\nBecame the voice everyone trusts. Settles disputes before they start."
+  },
+  {
+    "slug": "la-sombra",
+    "name": "La Sombra",
+    "rank": "Shotcaller",
+    "since": "Year 1",
+    "online": true,
+    "plate": "PF 1302",
+    "photo": "",
+    "bio": "Runs patrol schedules and faction relations.",
+    "development": "Joined in the first month. Took over patrols after the first block war and built the schedule the crew still uses."
+  },
+  {
+    "slug": "chino",
+    "name": "Chino",
+    "rank": "Shotcaller",
+    "since": "Year 1",
+    "online": false,
+    "plate": "PF 1303",
+    "photo": "",
+    "bio": "Handles money and the corner store.",
+    "development": "Started by running errands for the store owner. Now runs the store and keeps the books."
+  },
+  {
+    "slug": "duke",
+    "name": "Duke",
+    "rank": "Veteran",
+    "since": "Year 2",
+    "online": true,
+    "plate": "PF 1304",
+    "photo": "",
+    "bio": "Fought both block wars. Right hand on the street.",
+    "development": "Came in during Year 2 and proved himself in both block wars. Sponsors most new rookies."
+  },
+  {
+    "slug": "smoky",
+    "name": "Smoky",
+    "rank": "Veteran",
+    "since": "Year 2",
+    "online": false,
+    "plate": "PF 1305",
+    "photo": "",
+    "bio": "Eyes on the back alley. Knows every shortcut.",
+    "development": "Quiet and watchful. Mapped every alley and rooftop around the block."
+  },
+  {
+    "slug": "pelon",
+    "name": "Pelon",
+    "rank": "Soldier",
+    "since": "Year 2",
+    "online": true,
+    "plate": "PF 1306",
+    "photo": "",
+    "bio": "Main driver. Never late.",
+    "development": "Started as a runner. Now handles every pickup and getaway."
+  },
+  {
+    "slug": "viper",
+    "name": "Viper",
+    "rank": "Soldier",
+    "since": "Year 3",
+    "online": true,
+    "plate": "PF 1307",
+    "photo": "",
+    "bio": "Guards the door every night.",
+    "development": "Earned the door post after a quiet, spotless first year."
+  },
+  {
+    "slug": "lil-rey",
+    "name": "Lil Rey",
+    "rank": "Rookie",
+    "since": "New",
+    "online": true,
+    "plate": "",
+    "photo": "",
+    "bio": "On probation. Works hard, asks a lot.",
+    "development": "Just joined. Learning the block and the rules."
+  },
+  {
+    "slug": "gordo",
+    "name": "Gordo",
+    "rank": "Rookie",
+    "since": "New",
+    "online": false,
+    "plate": "",
+    "photo": "",
+    "bio": "Sponsored by Duke. Runs deliveries.",
+    "development": "Sponsored by Duke. Proving himself with deliveries."
+  }
+]

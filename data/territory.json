@@ -1,0 +1,9 @@
+[
+  { "slug": "the-flats", "name": "The Flats", "status": "held", "x": 40, "y": 40, "w": 170, "h": 120, "photo": "/wall.jpg", "text": "Main HQ. Three-story apartment building, the back stairs are the meeting spot.", "note": "Two on watch every night" },
+  { "slug": "corner-store", "name": "Corner Store", "status": "held", "x": 250, "y": 40, "w": 120, "h": 120, "photo": "", "text": "Small store on the corner. Source of news and supplies.", "note": "Run by Chino" },
+  { "slug": "back-alley", "name": "Back Alley", "status": "held", "x": 410, "y": 40, "w": 150, "h": 70, "photo": "", "text": "Fast way in and out of the block. Only members know the turns.", "note": "Watched by Smoky" },
+  { "slug": "empty-lot", "name": "Empty Lot", "status": "neutral", "x": 410, "y": 140, "w": 150, "h": 90, "photo": "", "text": "Open ground nobody claims. Used for meetups.", "note": "Unclaimed" },
+  { "slug": "old-garage", "name": "Old Garage", "status": "contested", "x": 40, "y": 200, "w": 170, "h": 160, "photo": "", "text": "Garage on the border. Other crews want it too.", "note": "Extra guard every session" },
+  { "slug": "small-plaza", "name": "Small Plaza", "status": "neutral", "x": 250, "y": 200, "w": 120, "h": 160, "photo": "", "text": "Open space by the bus stop. Busy by day, quiet at night.", "note": "Neutral ground" },
+  { "slug": "the-line", "name": "The Line", "status": "contested", "x": 410, "y": 260, "w": 150, "h": 100, "photo": "", "text": "Border with the next block. The hottest spot.", "note": "Never go alone" }
+]
