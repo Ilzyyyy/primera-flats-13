@@ -1,43 +1,5 @@
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import Photo from "../../../components/Photo";
-import PostCard from "../../../components/PostCard";
-import { statusLabel } from "../../../data/content";
-import { getLot, getMembers, getStreet, getTerritory } from "../../../lib/data";
+import { redirect } from "next/navigation";
 
-export const dynamic = "force-dynamic";
-
-export async function generateMetadata({ params }) {
-  const t = await getLot(params.slug);
-  return { title: t ? `${t.name} | Primera Flats 13` : "Territory" };
-}
-
-export default async function LotPage({ params }) {
-  const t = await getLot(params.slug);
-  if (!t) notFound();
-  const [street, members, territory] = await Promise.all([getStreet(), getMembers(), getTerritory()]);
-  const posts = street.filter((p) => p.territory === t.slug);
-
-  return (
-    <section className="page">
-      <Link href="/territory" className="back">&larr; Territory</Link>
-      <div className="profile">
-        <Photo src={t.photo} name={t.name} className="profile-ph wide" />
-        <div className="profile-info">
-          <span className={`pill ${t.status}`}>{statusLabel[t.status]}</span>
-          <h2 className="h2">{t.name}</h2>
-          <p className="bio">{t.text}</p>
-          {t.note && <p className="code">{t.note}</p>}
-        </div>
-      </div>
-
-      <h3 className="h3">Word on the street</h3>
-      <div className="feed">
-        {posts.map((p) => (
-          <PostCard key={p.id} post={p} members={members} territory={territory} hide="territory" />
-        ))}
-        {posts.length === 0 && <p className="empty">Nothing about {t.name} yet.</p>}
-      </div>
-    </section>
-  );
+export default function LotPage() {
+  redirect("/territory");
 }

@@ -30,7 +30,7 @@ export default function Admin() {
   useEffect(() => {
     if (!me?.admin) return;
     Promise.all(
-      ["members", "street", "territory"].map((n) =>
+      ["members", "street"].map((n) =>
         fetch("/api/data/" + n).then(async (r) => {
           const j = await r.json();
           if (!r.ok) throw new Error(j.error || "Could not load data.");
@@ -38,7 +38,7 @@ export default function Admin() {
         })
       )
     )
-      .then(([members, street, territory]) => setData({ members, street, territory }))
+      .then(([members, street]) => setData({ members, street }))
       .catch((e) => setLoadErr(e.message));
   }, [me]);
 
@@ -105,7 +105,6 @@ export default function Admin() {
   if (!data) return <p className="empty">Loading...</p>;
 
   const memberOpts = [{ v: "", l: "None" }, ...data.members.map((m) => ({ v: m.slug, l: m.name }))];
-  const lotOpts = [{ v: "", l: "None" }, ...data.territory.map((t) => ({ v: t.slug, l: t.name }))];
 
   const editors = {
     street: (
@@ -113,7 +112,7 @@ export default function Admin() {
         noun="post"
         items={data.street}
         setItems={setItems("street")}
-        makeBlank={() => ({ id: Date.now().toString(36), date: today(), tag: "rumor", author: "", member: "", territory: "", text: "" })}
+        makeBlank={() => ({ id: Date.now().toString(36), date: today(), tag: "rumor", author: "", member: "", text: "" })}
         itemTitle={(p) => (p.text ? p.text.slice(0, 48) : "New post")}
         itemSub={(p) => `${postTags[p.tag] || p.tag} · ${formatDate(p.date)}`}
         fields={[
@@ -122,7 +121,6 @@ export default function Admin() {
           { key: "tag", label: "Type", type: "select", options: Object.entries(postTags).map(([v, l]) => ({ v, l })), half: true },
           { key: "date", label: "Date", type: "date", half: true },
           { key: "member", label: "About member", type: "select", options: memberOpts, half: true },
-          { key: "territory", label: "About territory", type: "select", options: lotOpts, half: true },
         ]}
         dirty={dirty.street}
         status={status.street || {}}
@@ -162,51 +160,6 @@ export default function Admin() {
         onSave={() => save("members")}
       />
     ),
-    territory: (
-      <ListEditor
-        noun="territory"
-        items={data.territory}
-        setItems={setItems("territory")}
-        makeBlank={(list) => ({
-          slug: uniqueSlug("new-territory", list.map((x) => x.slug)),
-          name: "New territory",
-          status: "neutral",
-          x: 250,
-          y: 170,
-          w: 100,
-          h: 80,
-          photo: "",
-          text: "",
-          note: "",
-        })}
-        itemTitle={(t) => t.name || "New territory"}
-        itemSub={(t) => t.status}
-        fields={[
-          { key: "name", label: "Name", half: true },
-          {
-            key: "status",
-            label: "Status",
-            type: "select",
-            options: [
-              { v: "held", l: "Held by PF13" },
-              { v: "contested", l: "Contested" },
-              { v: "neutral", l: "Neutral" },
-            ],
-            half: true,
-          },
-          { key: "photo", label: "Photo", type: "image" },
-          { key: "text", label: "Description", type: "textarea", rows: 3 },
-          { key: "note", label: "Note" },
-          { key: "x", label: "Map X (0-600)", type: "number", half: true },
-          { key: "y", label: "Map Y (0-400)", type: "number", half: true },
-          { key: "w", label: "Map width", type: "number", half: true },
-          { key: "h", label: "Map height", type: "number", half: true },
-        ]}
-        dirty={dirty.territory}
-        status={status.territory || {}}
-        onSave={() => save("territory")}
-      />
-    ),
   };
 
   const anyDirty = Object.values(dirty).some(Boolean);
@@ -218,7 +171,6 @@ export default function Admin() {
           {[
             ["street", "Word on the Street"],
             ["members", "Members"],
-            ["territory", "Territory"],
           ].map(([k, l]) => (
             <button key={k} className="chip" aria-pressed={tab === k} onClick={() => setTab(k)}>
               {l}

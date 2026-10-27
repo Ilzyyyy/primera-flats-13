@@ -30,6 +30,22 @@ export const story = [
   },
 ];
 
+export const turf = {
+  image: "/turf.png",
+  alt: "Primera Flats 23rd Street",
+  w: 1200,
+  h: 680,
+  name: "Primera Flats 23rd Street",
+  text: [
+    "The Primera Flats 23rd Street (PF23) are located on the East Side in South Central Los Angeles, California. They are the sequel of the original Primera Flats on 1st Street in the Aliso Village government housing projects in East Los Angeles. The 23rd Street Flats barrio stretches from San Pedro Street and Main Street, between 23rd Street and 25th Street.",
+    "The Primera Flats often meet up at Trinity Park located on Wall Street, however, this area has led to some deadly shootouts with rival gangs. They often hide illegal firearms, drugs, and other contraband, all throughout the park. Their cliques are the 23rs Street, Pee Wees (PWS), Termites (TMS), and plenty more. Midget Loco, (Chicano rapper and actor) openly admits his affiliation with the Primera Flats 23rd Street.",
+  ],
+  allies: [
+    "The 1st Street Primera Flats formed an alliance with the 4th Street Flats. This alliance was broken when a member of the 4th Street Flats, shot and killed a member of the Primera Flats, in 2005. Early rivals were other gangs that coincided in the Aliso Village projects such as the Cuatro Flats, The Mob Crew, Al Capone, and 1st Street East Coast Crips (the only black gang in Boyle Heights). Other rivals of the Primera Flats are the Clarence Street Locos (CSL), Breed Street, and East LA 13 (ELA13).",
+    "The 23rd Street Flats are rivals of the Street Saints, 22nd Street Gang and the Ghetto Boyz Gang. Other rivals include the 38th Street, Varrio Locos Park, and the Harpys Gang. The Primera Flats and the Ghetto Boyz battled for control of the Trinity Park (especially during the 1980s and 1990s), due to lucrative profits from drug sells.",
+  ],
+};
+
 export const ranks = ["OG", "Big Homie", "Shootcaller", "Homie", "Young"];
 export const statusLabel = { held: "Held by PF13", contested: "Contested", neutral: "Neutral" };
 export const postTags = { warn: "Warning", rumor: "Rumor", event: "Event" };
