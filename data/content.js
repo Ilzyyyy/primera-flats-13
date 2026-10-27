@@ -28,6 +28,17 @@ export const story = [
       "The gang expanded their criminal operations behind the scenes via the underground weapons trade, drug dealing and a raft of other illicit businesses which brought them money and influence. They were a well known name which attracted both their own people and a host of dangerous enemies. Even with the police closing in, their names were still associated with the ongoing battles in Primera Flats. For the kids in the new generation the streets were more than just a place to live, they were a legacy of grudges that just wouldn\u2019t die.",
     ],
   },
+  {
+    title: "SOUND LAB",
+    image: "/story-4.gif",
+    alt: "Box of cash, a phone and bags inside the Sound Lab",
+    w: 480,
+    h: 480,
+    unoptimized: true,
+    text: [
+      "At the Jefferson Motel there\u2019s a little rap studio which has become a creative space for local artists and a regular meeting place for the members of Primera Flats 13. It began as a place to record music and has gradually evolved into something which is part of the fabric of the community, with people coming in for late night sessions, the usual suspects and a number of independent artists attempting to get their name out there. The music is the surface, the real business behind the scenes is a whole different thing. The studio is in fact the front for the Flats\u2019 underbelly and is used to keep certain operations out of the public eye. To the uninitiated it\u2019s just another little recording studio in Jefferson. To those who know the Flats it\u2019s the place where music, money and street connections all converge.",
+    ],
+  },
 ];
 
 export const turf = {

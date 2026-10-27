@@ -21,12 +21,13 @@ export default function StoryPage() {
       {story.map((sec, i) => (
         <div key={i} className={"story" + (i % 2 ? " flip" : "")}>
           <div className="story-text">
+            {sec.title && <h3 className="h3">{sec.title}</h3>}
             {sec.text.map((t, j) => (
               <p key={j}>{t}</p>
             ))}
           </div>
           <figure className="photo story-ph" data-hot>
-            <Image src={sec.image} alt={sec.alt} width={sec.w} height={sec.h} />
+            <Image src={sec.image} alt={sec.alt} width={sec.w} height={sec.h} unoptimized={sec.unoptimized} />
           </figure>
         </div>
       ))}
