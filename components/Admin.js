@@ -70,12 +70,13 @@ export default function Admin() {
     setStatus((s) => ({ ...s, [name]: {} }));
   };
 
-  async function save(name) {
+  async function save(name, items) {
+    const body = Array.isArray(items) ? items : data[name];
     setStatus((s) => ({ ...s, [name]: { busy: true } }));
     const r = await fetch("/api/data/" + name, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data[name]),
+      body: JSON.stringify(body),
     });
     const j = await r.json().catch(() => ({}));
     if (!r.ok) {
@@ -112,11 +113,12 @@ export default function Admin() {
         noun="post"
         items={data.street}
         setItems={setItems("street")}
-        makeBlank={() => ({ id: Date.now().toString(36), date: today(), tag: "rumor", author: "", member: "", text: "" })}
+        makeBlank={() => ({ id: Date.now().toString(36), date: today(), tag: "rumor", author: "", member: "", text: "", photo: "" })}
         itemTitle={(p) => (p.text ? p.text.slice(0, 48) : "New post")}
         itemSub={(p) => `${postTags[p.tag] || p.tag} · ${formatDate(p.date)}`}
         fields={[
           { key: "text", label: "Post", type: "textarea", rows: 4 },
+          { key: "photo", label: "Photo (optional)", type: "image" },
           { key: "author", label: "Posted by", half: true },
           { key: "tag", label: "Type", type: "select", options: Object.entries(postTags).map(([v, l]) => ({ v, l })), half: true },
           { key: "date", label: "Date", type: "date", half: true },
@@ -124,7 +126,8 @@ export default function Admin() {
         ]}
         dirty={dirty.street}
         status={status.street || {}}
-        onSave={() => save("street")}
+        onSave={(items) => save("street", items)}
+        saveOnDelete
       />
     ),
     members: (

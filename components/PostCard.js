@@ -9,7 +9,11 @@ export default function PostCard({ post, members = [], territory = [], hide = ""
         <strong>{post.author}</strong>
         <span>{formatDate(post.date)}</span>
       </div>
-      <p>{post.text}</p>
+      {post.text && <p>{post.text}</p>}
+      {post.photo && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img className="post-ph" src={post.photo} alt="" loading="lazy" />
+      )}
     </article>
   );
 }

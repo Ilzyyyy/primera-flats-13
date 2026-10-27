@@ -110,7 +110,7 @@ function Field({ f, item, set }) {
   );
 }
 
-export default function ListEditor({ items, setItems, fields, makeBlank, itemTitle, itemSub, onSave, dirty, status, noun }) {
+export default function ListEditor({ items, setItems, fields, makeBlank, itemTitle, itemSub, onSave, dirty, status, noun, saveOnDelete }) {
   const [sel, setSel] = useState(0);
   const [confirm, setConfirm] = useState(false);
   const idx = Math.min(sel, items.length - 1);
@@ -123,7 +123,9 @@ export default function ListEditor({ items, setItems, fields, makeBlank, itemTit
     setConfirm(false);
   };
   const remove = () => {
-    setItems(items.filter((_, i) => i !== idx));
+    const next = items.filter((_, i) => i !== idx);
+    setItems(next);
+    if (saveOnDelete) onSave(next);
     setSel(0);
     setConfirm(false);
   };
